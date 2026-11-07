@@ -36,6 +36,12 @@ The full source of Terry's Home is in [examples/terry-home](examples/terry-home)
 
 For future updates, see the [update guide](engine/UPDATING.md).
 
+## Anonymous multiplayer (optional)
+
+This branch supports small-scale anonymous real-time visits: guests can see each other's positions, headings, and basic movement in the same world without registering. Multiplayer is disabled by default. To enable it, deploy the WebSocket service, configure a reverse proxy, and set `multiplayer: { enabled: true }` in `home.config.js`. The site remains playable solo if the service is unavailable.
+
+Chat, pets, weather, and page content are not synchronized. See the [multiplayer documentation](backend/multiplayer/README.md) for deployment, security requirements, and limitations.
+
 ## Portal [🔗 Request listing](https://github.com/terryHu7/homecraft/issues/new/choose)
 
 <p align="center"><img src="https://terryhu.cn/share/homecraft-portal-en.webp" width="640" alt="Portal"></p>

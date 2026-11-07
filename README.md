@@ -35,3 +35,10 @@
 Terry's Home 完整实现见 [examples/terry-home](examples/terry-home)。
 
 后续更新见[更新指引](engine/UPDATING.md)。
+
+## 匿名多人访问（可选）
+
+本分支支持小规模匿名实时访问：游客可以在同一个空间中看到彼此的位置、朝向和基本移动状态，无需注册。多人功能默认关闭，需要自行部署 WebSocket 服务、配置反向代理，并在 `home.config.js` 中设置 `multiplayer: { enabled: true }`；服务不可用时仍可单人游览。
+
+此功能不包含聊天，也不会同步宠物、天气或页面内容。部署方法、安全配置与使用限制详见[多人功能文档](backend/multiplayer/README.md)。
+
