@@ -1,0 +1,15 @@
+services:
+  multiplayer:
+    build: .
+    restart: unless-stopped
+    environment:
+      ORIGIN: ${MULTIPLAYER_ORIGIN:?Set MULTIPLAYER_ORIGIN to the public HTTPS origin}
+      MAX_PLAYERS: "8"
+    ports:
+      - "127.0.0.1:13033:13033"
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 32
+    mem_limit: 128m
+    cpus: 0.50
